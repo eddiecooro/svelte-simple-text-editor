@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../src/App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  let html;\n  let js;\n  $: {\n    const script = document.createElement(\"script\");\n    script.innerHTML = js;\n    document.querySelector(\"head\").appendChild(script);\n  }\n</script>\n\n<style>\n  :global(body) {\n    padding: 0;\n  }\n  style {\n    display: block;\n  }\n  [contenteditable] {\n    font-family: monospace;\n    white-space: pre;\n    padding: 10px;\n  }\n  .container {\n    height: 100vh;\n    width: 100vw;\n    display: flex;\n    flex-direction: row;\n  }\n  .editors {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n  }\n  .results {\n    flex: 1;\n    border: medium solid red;\n  }\n  .editor {\n    flex: 1;\n    border: thick solid black;\n  }\n</style>\n\n<div class=\"container\">\n  <div class=\"editors\">\n    <div contenteditable bind:textContent={html} class=\"editor html\" />\n    <style contenteditable class=\"editor css\">\n\n    </style>\n    <div contenteditable bind:textContent={js} class=\"editor js\" />\n  </div>\n  <div class=\"results\">\n    {@html html}\n  </div>\n</div>\n"
+  ],
+  "names": [],
+  "mappings": "AAWU,IAAI,AAAE,CAAC,AACb,OAAO,CAAE,CAAC,AACZ,CAAC,AACD,KAAK,eAAC,CAAC,AACL,OAAO,CAAE,KAAK,AAChB,CAAC,AACD,CAAC,eAAe,CAAC,eAAC,CAAC,AACjB,WAAW,CAAE,SAAS,CACtB,WAAW,CAAE,GAAG,CAChB,OAAO,CAAE,IAAI,AACf,CAAC,AACD,UAAU,eAAC,CAAC,AACV,MAAM,CAAE,KAAK,CACb,KAAK,CAAE,KAAK,CACZ,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,GAAG,AACrB,CAAC,AACD,QAAQ,eAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,IAAI,CAAE,CAAC,AACT,CAAC,AACD,QAAQ,eAAC,CAAC,AACR,IAAI,CAAE,CAAC,CACP,MAAM,CAAE,MAAM,CAAC,KAAK,CAAC,GAAG,AAC1B,CAAC,AACD,OAAO,eAAC,CAAC,AACP,IAAI,CAAE,CAAC,CACP,MAAM,CAAE,KAAK,CAAC,KAAK,CAAC,KAAK,AAC3B,CAAC"
+}
